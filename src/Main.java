@@ -4,13 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        MyArrayList<String> arr = new MyArrayList<>();
+        MyLinkedList<String> arr = new MyLinkedList<>();
         arr.add("Hi");
         arr.add("Hello");
         arr.add("Privet");
         arr.add("Hola");
         arr.sort();
-        MyArrayList<Integer> arrInt = new MyArrayList<>();
+        MyLinkedList<Integer> arrInt = new MyLinkedList<>();
         arrInt.add(5);
         arrInt.add(3);
         arrInt.add(7);

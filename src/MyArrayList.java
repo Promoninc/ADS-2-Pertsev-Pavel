@@ -54,6 +54,7 @@ public class MyArrayList<T> implements MyList<T>{
     }
 
     @Override
+    //Function returns element by the index
     public T get(int index) {
         validateIndex(index, length - 1);
         return (T) arr[index];
@@ -143,7 +144,11 @@ public class MyArrayList<T> implements MyList<T>{
     @Override
     //Function returns list of objects as array
     public Object[] toArray() {
-        return arr;
+        Object[] newArr = new Object[length];
+        for(int i = 0; i < length; i++){
+            newArr[i] = arr[i];
+        }
+        return newArr;
     }
 
     @Override
