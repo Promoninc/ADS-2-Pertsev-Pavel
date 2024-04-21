@@ -171,7 +171,7 @@ public class MyLinkedList<T> implements MyList<T>{
             return;
         }
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length - 1; i++) {
             MyNode<T> current = head;
             for (int j = 0; j < length - 1; j++) {
                 Comparable<T> currentComparable = (Comparable<T>) current.data;
