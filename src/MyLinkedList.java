@@ -131,15 +131,36 @@ public class MyLinkedList<T> implements MyList<T>{
     @Override
     //Function removes first element of list
     public void removeFirst() {
-        head = head.next;
-        head.prev = null;
+        if(head == null){
+                throw new NegativeArraySizeException();
+        }
+        else if(head.next != null){
+            head = head.next;
+            head.prev = null;
+        }
+        else{
+            head = tail;
+            head.prev = null;
+        }
         length--;
     }
 
     @Override
     //Function removes last element of list
     public void removeLast() {
-        tail = tail.prev;
+        if(head == null){
+            throw new NegativeArraySizeException();
+        }
+        else if(tail.prev == null && tail != head){
+            head = tail;
+        }
+        else if(tail == head){
+            head = tail = null;
+        }
+        else{
+            tail = tail.prev;
+            tail.next = null;
+        }
         length--;
     }
 

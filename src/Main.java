@@ -21,6 +21,19 @@ public class Main {
         for(int i : arrInt){
             System.out.print(i + " ");
         }
+        System.out.println();
+        arrInt.remove(2);
+        arrInt.removeFirst();
+        for(int i : arrInt){
+            System.out.print(i + " ");
+        }
         System.out.print("\n");
+        MyStack<Integer> stack = new MyStack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.pop();
+        System.out.println(stack.isEmpty());
+        System.out.println(stack.peek());
     }
 }

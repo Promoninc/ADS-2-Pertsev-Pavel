@@ -13,6 +13,9 @@ public class MyStack<T>{
 
     //Function returns last element of stack
     public T peek(){
+        if(list.size() == 0){
+            throw new IndexOutOfBoundsException();
+        }
         return list.getLast();
     }
 
@@ -23,6 +26,9 @@ public class MyStack<T>{
 
     //Function deletes last element in stack
     public void pop(){
+        if(list.size() == 0){
+            throw new NegativeArraySizeException();
+        }
         list.removeLast();
     }
 }
