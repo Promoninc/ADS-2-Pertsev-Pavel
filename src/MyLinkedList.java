@@ -165,9 +165,24 @@ public class MyLinkedList<T> implements MyList<T>{
     }
 
     @Override
-    //Function sorts the elements of list. I don't know how to do that
+    //Function sorts the elements of list.
     public void sort() {
+        if (head == null || head.next == null) {
+            return;
+        }
 
+        for (int i = 0; i < length; i++) {
+            MyNode<T> current = head;
+            for (int j = 0; j < length - 1; j++) {
+                Comparable<T> currentComparable = (Comparable<T>) current.data;
+                if (currentComparable.compareTo(current.next.data) > 0) {
+                    T temp = current.data;
+                    current.data = current.next.data;
+                    current.next.data = temp;
+                }
+                current = current.next;
+            }
+        }
     }
 
     @Override
